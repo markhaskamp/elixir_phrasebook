@@ -27,6 +27,13 @@ defmodule EnumTest do
     assert [:a,:b,:c,:d] == Enum.at(chunks,0)
   end
 
+  test "chunk(list,n,step,[]) may build the last chunk with fewer items than the previous chunks" do
+    chunks = Enum.chunk([:a, :b, :c, :d, :e, :f], 4,4,[])
+    assert 2 == Enum.count(chunks)
+    assert [:e,:f] == Enum.at(chunks,1)
+  end
+
+
 
   defp list_12 do
     [0,1,2,3,4,5, 6,7,8,9,10,11]
