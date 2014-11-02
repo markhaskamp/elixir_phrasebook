@@ -20,6 +20,12 @@ defmodule EnumTest do
     chunks = Enum.chunk(list_12, 5,5,[:a, :b, :c, :d])
     assert Enum.at(chunks,2) == [10, 11, :a, :b, :c]
   end
+  
+  test "chunk(list,n,step,nil) will build chunks only up to what is defined by n and step. original items my not appear in new chunks " do
+    chunks = Enum.chunk([:a, :b, :c, :d, :e, :f], 4,4)
+    assert 1 == Enum.count(chunks)
+    assert [:a,:b,:c,:d] == Enum.at(chunks,0)
+  end
 
 
   defp list_12 do
