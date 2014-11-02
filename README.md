@@ -1,4 +1,4 @@
-Phrasebook
-==========
+# Elixir Phrasebook
 
-** TODO: Add description **
+
+Unit tests to help me explore Elixir syntax and methodology.
